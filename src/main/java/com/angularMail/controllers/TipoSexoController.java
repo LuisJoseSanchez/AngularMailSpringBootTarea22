@@ -10,7 +10,7 @@ import com.angularMail.model.repositories.TipoSexoRepository;
 
 @CrossOrigin
 @RestController
-public class TipoSexoController {
+public class TipoSexoController { // La clase que pide el ejercicio (TipoSexoController) ya está creada.
 
 	@Autowired
 	TipoSexoRepository tipoSexoRep;
