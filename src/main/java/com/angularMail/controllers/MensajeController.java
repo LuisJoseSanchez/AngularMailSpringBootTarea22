@@ -50,7 +50,23 @@ public class MensajeController {
 		return this.mensajeRepo.getMensajesRecibidosDeUsuario(idUsuAutenticado, pagina, mensajesPorPagina);
 	}
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	 /**
+   * Este método pertenece a la tarea 2.2 del curso.
+   * @param pagina
+   * @param mensajesPorPagina
+   * @param request
+   * @return
+   */
+  @GetMapping("/mensajes/enviados")
+  public List<Mensaje> mensajesEnviadosPorUsuarioAutenticado(int pagina, int mensajesPorPagina, HttpServletRequest request) {
+    int idUsuAutenticado = AutenticadorJWT.getIdUsuarioDesdeJwtIncrustadoEnRequest(request);
+    return this.mensajeRepo.getMensajesEnviadosDeUsuario(idUsuAutenticado, pagina, mensajesPorPagina);
+  }
+	
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	/**
 	 * Voy a obtener un listado de mensajes desde la bbdd. Para cada mensaje voy a rellenar una serie de valores, dentro de un DTO,
