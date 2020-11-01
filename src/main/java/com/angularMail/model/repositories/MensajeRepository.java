@@ -22,6 +22,8 @@ public interface MensajeRepository extends CrudRepository<Mensaje, Integer> {
 			+ "and d.spam = 0 and d.fechaEliminacion is null", nativeQuery = true)
 	public long countMensajesRecibidosDeUsuario(int idUsuario);
 
+	// El método getMensajesEnviadosDeUsuario(...) ya está implementado.
+	
 	// Mensajes enviados
 	@Query(value = "SELECT distinct m.* FROM Mensaje as m, destinatarioMensaje as d where d.idMensaje = m.id and m.idEmisor = ? and "
 			+ " d.archivado = 0 and d.spam = 0 and d.fechaEliminacion is null order by m.fecha desc limit ?, ?", nativeQuery = true)
