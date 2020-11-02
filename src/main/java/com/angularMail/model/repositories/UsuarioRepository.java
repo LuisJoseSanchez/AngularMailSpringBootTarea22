@@ -15,7 +15,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 	public Usuario findByNombre(String nombre);
     public Usuario findByUsuarioAndPassword(String name,String password);
 
-	@Query(value = "SELECT * FROM Usuario where nombre like ? or email like ?", nativeQuery = true)
+	@Query(value = "SELECT * FROM usuario where nombre like ? or email like ?", nativeQuery = true)
 	public List<Usuario> filterByNombreOrEmail(String filtroNombre, String filtroEmail);
 
 }
