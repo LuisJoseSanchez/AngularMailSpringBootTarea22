@@ -147,7 +147,7 @@ public class MensajeController {
 		dto.put("fecha", m.getFecha());
 		dto.put("asunto", m.getAsunto());
 		dto.put("cuerpo", m.getCuerpo());
-		// Para el usuario autenticado, debo localizar el registro de la tabla "destinatarioMensaje". Dentro de esa tabla está la 
+		// Para el usuario autenticado, debo localizar el registro de la tabla "destinatariomensaje". Dentro de esa tabla está la 
 		// información sobre si un usuario ha archivado, marcado como SPAM o eliminado un mensaje
 		DestinatarioMensaje dm = destMensajeRep.findByIdUsuarioAndIdMensaje(idUsuAutenticado, m.getId());
 		if (dm != null) {
