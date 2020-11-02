@@ -9,7 +9,7 @@ import com.angularMail.model.entities.DestinatarioMensaje;
 @Repository
 public interface DestinatarioMensajeRepository extends CrudRepository<DestinatarioMensaje, Integer> {
 
-	@Query(value = "SELECT distinct * FROM destinatarioMensaje as dm "
+	@Query(value = "SELECT distinct * FROM destinatariomensaje as dm "
 			+ "where dm.idDestinatario = ? and dm.idMensaje = ?", nativeQuery = true)
 	public DestinatarioMensaje findByIdUsuarioAndIdMensaje(int idUsuario, int idMensaje);
 

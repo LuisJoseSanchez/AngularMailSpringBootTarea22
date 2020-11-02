@@ -35,7 +35,7 @@ public class MensajeService {
 	public List<Mensaje> findMensajesRecibidosDeUsuario (int idUsuario, int pagina, int elementosPorPagina) {
 		List<Mensaje> entities = new ArrayList<Mensaje>();
 		try {			
-			Query q = em.createNativeQuery("SELECT distinct m.* FROM mensaje as m, destinatarioMensaje as d where "
+			Query q = em.createNativeQuery("SELECT distinct m.* FROM mensaje as m, destinatariomensaje as d where "
 					+ "d.idMensaje = m.id and d.idDestinatario = ? and "
 					+ "d.archivado = 0 and d.spam = 0 and d.fechaEliminacion is null order by m.fecha desc limit ?, ?", Mensaje.class);
 			q.setParameter(1, idUsuario);
